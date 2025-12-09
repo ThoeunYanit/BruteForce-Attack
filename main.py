@@ -1,16 +1,30 @@
-from UserManagement import User_Management
-from SimpleBruteForceAttack import Simple_Brute_Force, Count_tracking_Simple_Brute_Force
-from DictionaryAttack import DictionaryAttack
-from HybridAttack import HybridAttack
+from users.user_management import UserManagement
+from attacks.SimpleBruteForceAttack import Simple_Brute_Force, Count_tracking_Simple_Brute_Force
+from attacks.DictionaryAttack import DictionaryAttack
+from attacks.HybridAttack import HybridAttack
 
-user_database_file = "C:\\Python Introduction to Cybersecurity\\Project Brute\\user_database.txt"
+import pyfiglet
+from colorama import Fore, Style, init
+
+
+user_database_file = "C:\\Project Python Year2\\BruteForce-Attack\\data\\user_database.txt"
+
 
 try:
-    um = User_Management(user_database_file)
+
+    init(autoreset=True)  # auto-reset color after each print
+
+    ascii_art = pyfiglet.figlet_format("Brute Force Simulator", font="standard")
+
+    print(Fore.RED + ascii_art)    # text in red
+  
+
+    um = UserManagement(user_database_file)
     simple = Simple_Brute_Force(um)
     count = Count_tracking_Simple_Brute_Force(um)
     dict_attack = DictionaryAttack(um)
     hybrid = HybridAttack(um)
+
 
     while True:
         print("\n---Brute Force Attack Simulator---")

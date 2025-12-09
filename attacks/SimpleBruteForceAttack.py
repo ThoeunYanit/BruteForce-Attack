@@ -1,6 +1,6 @@
 # Simple Brute Force Attack
 
-from UserManagement import *
+from users.user_management import UserManagement
 
 import itertools
 import string
@@ -106,7 +106,7 @@ class Count_tracking_Simple_Brute_Force:
 
 if __name__ == '__main__' :
     try:
-        user = User_Management("C:\\Python Introduction to Cybersecurity\\Project Brute\\user_database.txt")
+        user = UserManagement("C:\\Project Python Year2\\BruteForce-Attack\\data\\user_database.txt")
 
         # sb = Simple_Brute_Force(user)
         # sb.crack()

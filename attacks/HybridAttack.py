@@ -1,4 +1,4 @@
-from UserManagement import *
+from users.user_management import UserManagement
 
 import itertools
 import string
@@ -30,7 +30,7 @@ class HybridAttack:
         
         target_password = users[target_user]
 
-        dictionary_file = "C:\\Python Introduction to Cybersecurity\\Project Brute\\dictionary_list.txt"
+        dictionary_file = "C:\\Project Python Year2\\BruteForce-Attack\\data\\user_database.txt"
         chars = string.digits + string.punctuation  ## 42characters ### N^L (N=character, L = length) ## 42^3 = 74088
         max_suffix_length = 3  ##password123 , suffix length = 3 (123) added after passwd
         attempt_count = 0
@@ -67,7 +67,7 @@ class HybridAttack:
 
 if __name__ == '__main__' :
     try:
-        user = User_Management("C:\\Python Introduction to Cybersecurity\\Project Brute\\user_database.txt")
+        user = UserManagement("C:\\Project Python Year2\\BruteForce-Attack\\data\\user_database.txt")
         ha = HybridAttack(user)
         ha.crack()
     except Exception as e:

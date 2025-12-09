@@ -1,4 +1,4 @@
-from UserManagement import User_Management
+from users.user_management import UserManagement
 
 class DictionaryAttack:
     def __init__(self, user_database_file):
@@ -7,6 +7,7 @@ class DictionaryAttack:
     def crack(self):
         try :
             self.user_manager.reload_user()
+            
         except FileNotFoundError :
             print("Error: User database file not found!")
             return
@@ -26,11 +27,11 @@ class DictionaryAttack:
             return
 
         target_password = users[target_user].strip()
-        wordlist = 'C:\\Python Introduction to Cybersecurity\\Project Brute\\dictionary_list.txt'
+        dictionary_file = 'C:\\Python Introduction to Cybersecurity\\Project Brute\\dictionary_list.txt'
 
         attempt = 0
         try :
-            with open(wordlist, 'r') as f:
+            with open(dictionary_file, 'r') as f:
                 for word in f:
                     attempt += 1
                     print(f"Trying: {word.strip()}")
@@ -39,6 +40,7 @@ class DictionaryAttack:
                         print(f"\nPASSWORD FOUND ► {target_password}")
                         print(f"Attempts: {attempt}")
                         return
+                    
         except FileNotFoundError:
             print(f"Error: Dictionary file not found.")
         except PermissionError:
@@ -52,7 +54,7 @@ class DictionaryAttack:
 
 if __name__ == '__main__' :
     try: 
-        user = User_Management("C:\\Python Introduction to Cybersecurity\\Project Brute\\user_database.txt")
+        user = UserManagement("C:\\Project Python Year2\\BruteForce-Attack\\data\\user_database.txt")
         da = DictionaryAttack(user)
         da.crack()
     except Exception as e:

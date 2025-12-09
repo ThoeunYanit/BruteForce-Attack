@@ -7,3 +7,4 @@ dani : qwerty@12
 messi : goat
 ronaldo : suii
 mbappe : apple
+santa : santa
