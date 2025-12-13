@@ -11,6 +11,7 @@ class UserManagement:
 
 
     def reload_user(self):
+        # self.__user_dict.clear()
         try:
             with open(self.__user_database_file, 'r') as file:
                 for line in file:
@@ -47,13 +48,12 @@ class UserManagement:
 
         password = input("Enter a password: ")
         
-        #forgot to check same username
+   
         
         self.__user_dict[username] = password
 
         try:
-            with open(self.__user_database_file, 'a') as file:
-                file.write(f"{username} : {password}\n")
+            self.save()
         except PermissionError:
             print("Error: Permission denied to write to user database.")
         except Exception as e:
@@ -155,8 +155,6 @@ class UserManagement:
         self.save()
         
 
-    def verify_user(self):
-        pass 
 
 
     def menu(self):
@@ -166,8 +164,7 @@ class UserManagement:
             print("2. Update User")
             print("3. View User")
             print("4. Delete User")
-            print("5. Verify User")
-            print("6. Exit")
+            print("5. Exit")
 
             choice = int(input("Enter choice: "))
 
@@ -175,15 +172,7 @@ class UserManagement:
             elif choice == 2: self.update_user()
             elif choice == 3: self.view_user()
             elif choice == 4: self.delete_user()
-            elif choice == 5: self.verify_user()
-            elif choice == 6: return
+            elif choice == 5: return
             else: print("Invalid Choice!!!")
 
 
-
-if __name__ == '__main__':
-    try:
-        user = UserManagement("C:\\Project Python Year2\\BruteForce-Attack\\data\\user_database.txt")
-        user.menu()
-    except Exception as e:
-        print(f"Error: Program initialization failed - {e}")
