@@ -1,5 +1,5 @@
 from users.user_management import UserManagement
-from attacks.simple_bruteforce_attack import SimpleBruteForce, CountTrackingSimpleBruteForce
+from attacks.simple_bruteforce_attack import SimpleBruteForceAttack, CountTrackingSimpleBruteForce
 from attacks.dictionary_attack import DictionaryAttack
 from attacks.hybrid_attack import HybridAttack
 
@@ -51,7 +51,7 @@ def main():
     um = UserManagement(user_database_file)
 
     # Initialize attacks
-    simple_attack = SimpleBruteForce(um)
+    simple_attack = SimpleBruteForceAttack(um)
     count_attack = CountTrackingSimpleBruteForce(um)
     dict_attack = DictionaryAttack(um, dictionary_file)
     hybrid_attack = HybridAttack(um, dictionary_file)
@@ -73,23 +73,23 @@ def main():
 
             elif choice == 2:
                 username = input("Enter target username: ")
-                result = simple_attack.crack_user(username)
-                print("Password FOUND!" if result else "Password NOT found.")
+                simple_attack.crack_user(username)
+                
 
             elif choice == 3:
                 username = input("Enter target username: ")
-                result = count_attack.crack_user(username)
-                print("Password FOUND!" if result else "Password NOT found.")
+                count_attack.crack_user(username)
+                
 
             elif choice == 4:
                 username = input("Enter target username: ")
-                result = dict_attack.crack_user(username)
-                print("Password FOUND!" if result else "Password NOT found.")
+                dict_attack.crack_user(username)
+                
 
             elif choice == 5:
                 username = input("Enter target username: ")
-                result = hybrid_attack.crack_user(username)
-                print("Password FOUND!" if result else "Password NOT found.")
+                hybrid_attack.crack_user(username)
+                
 
             elif choice == 6:
                 print("Exiting program. Goodbye!")

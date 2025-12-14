@@ -61,7 +61,6 @@ santa123
 goat
 cat
 dog
-catty
 ronaldo
 messi
 mbappe

@@ -2,16 +2,17 @@
 class UserManagement:
 
     def __init__(self, user_database_file):
-        self.__user_dict = {}
-        self.__user_database_file = user_database_file
+        self.__user_dict = {} #this is a stored dictionary
+        self.__user_database_file = user_database_file #this is path of user_database.txt
         
-
+    #to access the stored dictionary which is a private attribute, need this so that we can access outside this class
     def get_user(self):
         return self.__user_dict
 
-
+    # load user from user_database.txt into a stored dictionary 
     def reload_user(self):
-        # self.__user_dict.clear()
+        self.__user_dict.clear() #clear dictionary
+
         try:
             with open(self.__user_database_file, 'r') as file:
                 for line in file:
@@ -20,12 +21,18 @@ class UserManagement:
 
         except FileNotFoundError:
             print("Error: User database file not found.")
+            return False
         except PermissionError:
             print("Error: Permission denied to access user database.")
+            return False
         except Exception as e:
             print(f"Error: Failed to read user database - {e}")
+            return False
+        else: 
+            return True
+        
     
-
+    # save username and password in the stored dictionary into the usser_dataabase.txt
     def save(self):
         try:
             with open(self.__user_database_file, 'w') as file:
@@ -35,8 +42,12 @@ class UserManagement:
             print("Error: Permission denied to write to user database.")
         except Exception as e:
             print(f"Error: Failed to save user database - {e}")
+        else:
+            return True
             
-
+    #always reload user first to have data in dictionary
+    #after that, it will be code of the operation
+    #after the operation ends, always save into the user_database.txt
 
     def create_user(self):
         self.reload_user()
@@ -49,7 +60,6 @@ class UserManagement:
         password = input("Enter a password: ")
         
    
-        
         self.__user_dict[username] = password
 
         try:
@@ -58,6 +68,8 @@ class UserManagement:
             print("Error: Permission denied to write to user database.")
         except Exception as e:
             print(f"Error: Failed to create user - {e}")
+        else:
+            return True
 
         
 
@@ -98,6 +110,7 @@ class UserManagement:
             return
         
         self.__user_dict[new_username] = self.__user_dict.pop(username)
+        
         self.save()
 
 
@@ -154,7 +167,6 @@ class UserManagement:
         del self.__user_dict[delete_username] 
         self.save()
         
-
 
 
     def menu(self):

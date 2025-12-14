@@ -1,11 +1,13 @@
 poppy : 123
-ajax : 222
+ajax : catty
 jelly : 222
-dani : qwerty@12
+dani : qwerty43
 messi : goat
 ronaldo : 777
 mbappe : apple
 santa : santa123
-hello : 123
+admin : admin1!
 rei : 1234
 max : abcd
+reezy : 2dd
+jake : 444
