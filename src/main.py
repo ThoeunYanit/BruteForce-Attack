@@ -3,6 +3,7 @@ from attacks.simple_bruteforce_attack import SimpleBruteForceAttack, CountTracki
 from attacks.dictionary_attack import DictionaryAttack
 from attacks.hybrid_attack import HybridAttack
 
+#this is just a design title
 def print_title():
     RED = "\033[91m" #91m is for Red color
     RESET = "\033[0m"
