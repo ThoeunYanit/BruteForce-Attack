@@ -9,7 +9,7 @@ def test_password_found():
     attack = HybridAttack(um, wordlist)
     result = attack.crack_user("dani")
 
-    assert result == None
+    assert result == 'qwerty43'
 
 #case 2: password is not found in the dictionary_list and cannot find after being add suffix(suffix length = 3)
 def test_password_not_found():

@@ -24,13 +24,33 @@ git clone https://github.com/ThoeunYanit/BruteForce-Attack.git
 ```
 ### 2. Navigate to the Project Directory
 ```bash
-cd BruteForce-Attack/src
+cd BruteForce-Attack
 ```
 ### 3. Run the Main Program
 ```bash
-python main.py
+python src/main.py
 ```
 
+### 4. Run Tests (Optional)
+To run all tests using pytest:
+```bash
+pytest 
+```
+Or test a specific file
+```bash
+pytest tests/test_simple_bruteforce_attack.py
+```
+
+
+## Technologies Used
+- Python 3.13.7
+- pytest (for testing)
+- Standard Python libraries (itertools, string)
+
+### Required Libraries (pytest)
+```
+pip install pytest
+```
 
 ## Project Structure 
 ```text
@@ -64,8 +84,7 @@ BruteForce-Attack/
 └── README.md
 ```
 
-## Technologies Used
-- Python 3.13.7
-- pytest (for testing)
-- Standard Python libraries (itertools, string)
-
+## Github Link
+```bash
+https://github.com/ThoeunYanit/BruteForce-Attack.git
+```
