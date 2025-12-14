@@ -1,4 +1,6 @@
 # BruteForce-Attack-Simulation
+
+## Project Overview
 This is a Brute Force Attack Simulator written in Python Programming Language, created for educational purposes.
 This Project demonstrates how **simple brute-force attack**, **dictionary attack**, and **hybrid attack** work, along with **user management** where everyone can create, update, view and delete users.
 
@@ -14,7 +16,22 @@ This Project demonstrates how **simple brute-force attack**, **dictionary attack
    - Attempt passswords from a wordlist (`dictionary_list.txt`)
 5. **Hybrid Attack**
    - Combine dictionary attack with characters (digits and punctuation)
- 
+
+## Steps to Run the Code
+### 1. Clone or Download the Project
+```bash
+git clone https://github.com/ThoeunYanit/BruteForce-Attack.git
+```
+### 2. Navigate to the Project Directory
+```bash
+cd BruteForce-Attack/src
+```
+### 3. Run the Main Program
+```bash
+python main.py
+```
+
+
 ## Project Structure 
 ```text
 BruteForce-Attack/
@@ -45,5 +62,10 @@ BruteForce-Attack/
 │
 ├── main.py
 └── README.md
+```
 
+## Technologies Used
+- Python 3.13.7
+- pytest (for testing)
+- Standard Python libraries (itertools, string)
 
