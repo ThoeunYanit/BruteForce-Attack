@@ -16,6 +16,7 @@ This Project demonstrates how **simple brute-force attack**, **dictionary attack
    - Combine dictionary attack with characters (digits and punctuation)
  
 ## Project Structure 
+```text
 BruteForce-Attack/
 │
 ├── src/
