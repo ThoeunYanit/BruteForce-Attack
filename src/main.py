@@ -45,8 +45,8 @@ def main():
 
     print_title()
 
-    user_database_file = "C:/Project Python Year2/BruteForce-Attack/data/user_database.txt"
-    dictionary_file = "C:/Project Python Year2/BruteForce-Attack/data/dictionary_list.txt"
+    user_database_file = "data/user_database.txt"
+    dictionary_file = "data/dictionary_list.txt"
 
     # Initialize user management
     um = UserManagement(user_database_file)
