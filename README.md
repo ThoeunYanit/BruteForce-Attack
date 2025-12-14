@@ -14,3 +14,5 @@ This Project demonstrates how **simple brute-force attack**, **dictionary attack
    - Attempt passswords from a wordlist (`dictionary_list.txt`)
 5. **Hybrid Attack**
    - Combine dictionary attack with characters (digits and punctuation) 
+  
+
